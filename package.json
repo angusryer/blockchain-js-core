@@ -4,7 +4,8 @@
   "description": "Minimally functional blockchain using concensus algorithm",
   "main": "core.ts",
   "scripts": {
-    "build": "esbuild core.ts --outfile=./dist/core.js",
+    "build": "node esbuild.config.js",
+    "dev": "node esbuild.config.js --watch",
     "test": "npm tsc --no-emit && npm jest"
   },
   "repository": {

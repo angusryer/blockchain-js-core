@@ -1,4 +1,4 @@
-class Blockchain {
+export default class BlockchainJsCore {
 
     private chain: any[];
     private pendingTransactions: any[];
@@ -100,4 +100,3 @@ class Blockchain {
         }
     }
 }
-module.exports = Blockchain;
