@@ -1,0 +1,29 @@
+{
+  "name": "blockchain-js-core",
+  "version": "1.0.0",
+  "description": "Minimally functional blockchain using concensus algorithm",
+  "main": "core.ts",
+  "scripts": {
+    "build": "esbuild core.ts --outfile=./dist/core.js",
+    "test": "npm tsc --no-emit && npm jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angusryer/blockchain-js-core.git"
+  },
+  "keywords": [
+    "blockchain"
+  ],
+  "author": "Angus W Ryer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angusryer/blockchain-js-core/issues"
+  },
+  "homepage": "https://github.com/angusryer/blockchain-js-core#readme",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.13"
+  }
+}
