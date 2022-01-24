@@ -1,3 +1,3 @@
-import BlockchainJsCore from './src/core';
+import Blockchain from './src/blockchain';
 
-export default BlockchainJsCore;
+export default Blockchain;
