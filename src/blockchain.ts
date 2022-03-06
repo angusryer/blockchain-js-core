@@ -3,19 +3,19 @@ import crypto from "crypto";
 type Block = {
 	index: number;
 	timestamp: string;
-	transactions: any[];
+	transactions: Transaction[];
 	previousHash: string;
-	nonce: string;
-	hash: string;
+	nonce: string | null;
+	hash: string | undefined;
 };
 
 type Transaction = {
-	sender: string;
-	recipient: string;
-	data: any;
+	sender: string; // email?
+	recipient: string; // email?
+	data: unknown;
 };
 
-type Host = any;
+type Host = unknown;
 
 export default class Blockchain {
 	private chain: Block[];
@@ -37,7 +37,7 @@ export default class Blockchain {
 	}
 
 	/**
-	 * Adds a node to our peer table
+	 * Return all nodes from our peer table
 	 */
 	getPeers() {
 		return Array.from(this.peers);
@@ -46,8 +46,11 @@ export default class Blockchain {
 	/**
 	 * Creates a new block containing any outstanding transactions
 	 */
-	newBlock(previousHash = undefined, nonce = null) {
-		let block = {
+	newBlock(
+		previousHash: string | undefined = undefined,
+		nonce: string | null = null
+	) {
+		let block: Block = {
 			index: this.chain.length,
 			timestamp: new Date().toISOString(),
 			transactions: this.pendingTransactions,
